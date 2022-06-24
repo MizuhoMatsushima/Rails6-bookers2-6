@@ -28,7 +28,19 @@
             <% end %>
           </td>
           <td>
-
+            <% if @book_id.favorited_by?(current_user) %>
+            <p>
+              <%= link_to book_favorites_path(@book_id), method: :delete do %>
+                ♥<%= @book_id.favorites.count %>
+              <% end %>
+            </p>
+            <% else %>
+            <p>
+              <%= link_to book_favorites_path(@book_id), method: :post do %>
+                ♡<%= @book_id.favorites.count %>
+              <% end %>
+            </p>
+            <% end %>
           </td>
           <td>
             コメント数：<%= @book_id.book_comments.count %>
