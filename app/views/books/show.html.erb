@@ -37,13 +37,10 @@
       </table>
 
       <div class="comment">
-       <%= render 'book_comments/comment', book: @book %>
+        <%= render 'book_comments/comment-index', book: @book %>
       </div>
       <div>
-        <%= form_with model: [@book, @book_comment] do |f| %>
-          <%= f.text_area :comment, rows: '5' %>
-          <%= f.submit "送信" %>
-        <% end %>
+        <%= render 'book_comments/comment-new', book: @book, book_comment: @book_comment %>
       </div>
     </div>
   </div>
