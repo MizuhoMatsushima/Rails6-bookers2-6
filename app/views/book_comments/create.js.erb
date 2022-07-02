@@ -1,1 +1,1 @@
-$(".comment-index_<%= comment.book_id %>").html("<%= escape_javascript(render partial: 'book_comments/comment-index', locals: {book: @book}) %>");
+$(".comment").html("<%= j(render 'book_comments/comment', book: @book, book_comment: @book_comment ) %>");

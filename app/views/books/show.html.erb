@@ -37,10 +37,7 @@
       </table>
 
       <div class="comment">
-        <%= render 'book_comments/comment-index', book: @book %>
-      </div>
-      <div>
-        <%= render 'book_comments/comment-new', book: @book, book_comment: @book_comment %>
+        <%= render 'book_comments/comment', book: @book, book_comment: @book_comment %>
       </div>
     </div>
   </div>
